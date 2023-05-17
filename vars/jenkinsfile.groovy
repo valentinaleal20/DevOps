@@ -17,7 +17,7 @@ def call(Map params){
             stage('scan') {
                 steps {
                     script {
-                        def x = new com.devops.SonarLib()
+                        def x = new com.devops.sonarlib()
                         x.scan()
                     }  
                 }        
