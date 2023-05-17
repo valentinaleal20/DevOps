@@ -18,7 +18,7 @@ def call(Map params){
                 steps {
                     script {
                         def x = new com.devops.sonarlib()
-                        x.scan()
+                        x.sonar()
                     }  
                 }        
             }
