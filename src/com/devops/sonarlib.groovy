@@ -6,7 +6,7 @@ def sonar(){
         -Dsonar.projectKey=reto \
         -Dsonar.projectName=reto \
         -Dsonar.projectVersion=1.0 \
-        -Dsonar.sources=/var/jenkins_home/workspace/librerias \
+        -Dsonar.sources=/var/jenkins_home/workspace/carrito \
         -Dsonar.host.url=http://sonarqube:9000 \
         -Dsonar.login=admin \
         -Dsonar.password=admin1 "
