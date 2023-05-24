@@ -8,7 +8,7 @@ def call(Map params){
                 steps {
                     script {
                         def build = new com.devops.buildlib()
-                        build.hello(name: params.name)
+                        build.hello()
                     }
                 }
                 
