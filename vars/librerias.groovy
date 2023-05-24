@@ -7,8 +7,8 @@ def call(Map params){
             stage('hello') {
                 steps {
                     script {
-                        def build = new com.devops.buildlib()
-                        build.hello(name: params.name)
+                        def v = new com.devops.buildlib()
+                        v.hello(name: params.name)
                     }
                 }
                 
