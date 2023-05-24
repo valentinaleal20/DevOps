@@ -4,7 +4,7 @@ def call(Map params){
         agent any
 
         stages {
-            /*stage('saludo') {
+            stage('hi') {
                 steps {
                     script {
                         def build = new com.devops.buildlib()
@@ -12,7 +12,7 @@ def call(Map params){
                     }
                 }
                 
-            }*/
+            }
         
             stage('scan') {
                 steps {
