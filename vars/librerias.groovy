@@ -4,11 +4,11 @@ def call(Map params){
         agent any
 
         stages {
-            stage('hello') {
+            stage('saludo') {
                 steps {
                     script {
-                        def v = new com.devops.buildlib()
-                        v.hello(name: params.name)
+                        def build = new com.devops.buildlib()
+                        build.hello(name: params.name)
                     }
                 }
                 
@@ -17,8 +17,8 @@ def call(Map params){
             stage('scan') {
                 steps {
                     script {
-                        def x = new com.devops.sonarlib()
-                        x.sonar()
+                        def scann = new com.devops.sonarlib()
+                        scann.sonar()
                     }  
                 }        
             }
