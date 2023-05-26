@@ -1,5 +1,5 @@
 package org.devops
 
-def buildimagen(Map params){
-    sh "docker build -t ${params.builimagen} ."  
+def buildimagen(){
+    sh "docker build -t ${params.buildimagen} ."  
 }

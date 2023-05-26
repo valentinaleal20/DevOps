@@ -23,10 +23,11 @@ def call(Map params){
                 }        
             }
        
-            stage('Run') {
+            stage('imagencont') {
                 steps {
-                        sh 'docker run -d --name reto -p 8080:8080 fase2'
-                    }
+                    script {
+                        def buildimagen = new com.devops.sonarlib()
+                        contimag.buildimagen()
             }  
         }
     }
