@@ -25,7 +25,7 @@ def call(Map params){
        
             stage('Run') {
                 steps {
-                        sh 'docker run -d --name reto -p 8087:5500 fase2'
+                        sh 'docker run -d --name reto -p 8080:8080 fase2'
                     }
             }  
         }
