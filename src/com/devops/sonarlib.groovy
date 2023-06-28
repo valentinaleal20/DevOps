@@ -8,6 +8,5 @@ def sonar(){
         -Dsonar.projectVersion=1.0 \
         -Dsonar.sources=/var/jenkins_home/workspace/jobprueba3 \
         -Dsonar.host.url=http://sonarqube:9000 \
-        -Dsonar.login=admin \
-        -Dsonar.password=admin1 "
+        
 }

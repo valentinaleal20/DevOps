@@ -26,8 +26,8 @@ def call(Map params){
             stage('imagencont') {
                 steps {
                     script {
-                        def buildimagen = new com.devops.sonarlib()
-                        contimag.buildimagen()
+                        def buildimag = new com.devops.imagen()
+                        buildimag.buildimagen()
             }  
         }
     }
