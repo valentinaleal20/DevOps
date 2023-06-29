@@ -1,5 +1,5 @@
 package com.devops
 
-def hello(Map params){
+def hello(){
         sh 'npm install'
 }
