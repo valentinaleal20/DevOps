@@ -7,6 +7,6 @@ def sonar(){
         -Dsonar.projectName=reto \
         -Dsonar.projectVersion=1.0 \
         -Dsonar.sources=/var/jenkins_home/workspace/jobprueba3 \
-        -Dsonar.host.url=http://sonarqube:9000 \
-        
+        -Dsonar.host.url=http://sonarqube:9000 "
 }
+
