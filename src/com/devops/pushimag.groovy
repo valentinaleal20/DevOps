@@ -1,4 +1,4 @@
-package org.devops
+package com.devops
 
 pipeline {
     agent any 
