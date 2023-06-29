@@ -1,5 +1,5 @@
 package com.devops
 
-def hello(){
+def call(){
         sh 'npm install'
 }
