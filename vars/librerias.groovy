@@ -7,7 +7,7 @@ def call(Map params){
             stage('hi') {
                 steps {
                     script {
-                        def build = new com.devops.buildlib()
+                        def buildnpm = new com.devops.buildlib()
                         buildnpm.build()
                     }
                 }
