@@ -2,7 +2,7 @@ package com.devops
 
 def scanner(repo_name){
 
-    def scannerHome = tool 'sonarscan'
+    def scannerHome = tool 'serversonarqube'
     
     withSonarQubeEnv('serversonarqube'){
      sh "${scannerHome}/bin/sonar-scanner \
