@@ -1,7 +1,7 @@
 package com.devops
 
 def call() {
-    withCredentials([string(credentialsId: 'tokendockerhub', variable: 'DOCKER_TOKEN')]) {
+    withCredentials([string(credentialsId: 'tockendockerhub', variable: 'DOCKER_TOKEN')]) {
         sh "docker build -t fase2 ."
         
         docker.withRegistry('https://registry-1.docker.io', 'dockerhub-credentials') {
