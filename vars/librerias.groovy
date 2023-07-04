@@ -17,14 +17,14 @@ def call(Map params){
                 
             }
         
-            stage('scan') {
-                steps {
-                    script {
-                    def scann = new com.devops.sonarlib()
-                    scann.scanner('valentinaleal20/aplicaciondisney')
+            stage('codeanalysis'){
+                steps{
+                    script{
+                    sonarlib(this)
                     }
-                }        
-            }
+                }
+            }     
+    
        
             stage('imagencont') {
                 steps {

@@ -1,14 +1,12 @@
 package com.devops
 
-def scanner(repo_name){
-
-    def scannerHome = tool 'serversonarqube'
-    
-    withSonarQubeEnv('serversonarqube'){
-     sh "${scannerHome}/bin/sonar-scanner \
-        -Dsonar.projectKey='${repo_name}'\
-        -Dsonar.projectName='${repo_name}' \
-        -Dsonar.sources=${env.WORKSPACE} "
+def call(script){
+    script.withSonarQubeEnv('sonarqube'){
+        bat "mvn clean verify sonar:sonar"
+        }
+    script.withSonarQubeEnv('sonarqube'){
+        timeout(time: 3, unit: 'MINUTES'){
+        waitForQualityGate abortPipeline: true 
+        }
     }
 }
-
