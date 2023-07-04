@@ -1,4 +1,4 @@
-import com.devops.MyDevOpsLibrary
+import com.devops.
 
 def call(Map params){
     
@@ -36,10 +36,6 @@ def call(Map params){
                         }  
                     }
                 }
-            stage('DevOps Workflow') {
-                MyDevOpsLibrary pushimag = new MyDevOpsLibrary()
-                pushimag()
-            }
          }
     }
 }
