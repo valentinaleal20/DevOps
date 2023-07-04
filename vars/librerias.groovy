@@ -8,7 +8,7 @@ def call(Map params) {
             stage('hi') {
                 steps {
                     script {
-                        def buildnpm = new buildimagen()
+                        def buildnpm = new com.devops.buildimagen()
                         buildnpm.buildimagen()
                     }
                 }
@@ -16,7 +16,7 @@ def call(Map params) {
             stage('scan') {
                 steps {
                     script {
-                        def scann = new sonarlib()
+                        def scann = new com.devops.sonarlib()
                         scann.scanner()
                     }
                 }        
@@ -24,7 +24,7 @@ def call(Map params) {
             stage('imagencont') {
                 steps {
                     script {
-                        def buildimag = new imagen()
+                        def buildimag = new com.devops.imagen()
                         buildimag.buildimagen()
                     }  
                 }
