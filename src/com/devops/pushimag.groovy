@@ -22,4 +22,4 @@ class MyDevOpsLibrary {
         sh 'docker tag mi-docker-image username/mi-docker-image:latest'
         sh 'docker push username/mi-docker-image:latest'
     }
-}
+}*/
