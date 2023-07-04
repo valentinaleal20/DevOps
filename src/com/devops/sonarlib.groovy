@@ -1,11 +1,10 @@
-package com.devops
-
-def call(script) {
-    def sonarScannerHome = tool name: 'serversonarqube', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+def call(Map params) {
+    def script = params.script
+    def sonarScannerHome = script.tool name: 'serversonarqube', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     script.withSonarQubeEnv('serversonarqube') {
-    def scannerHome = tool 'serversonarqube'
-        withEnv(["PATH+SONARSCANNER=${scannerHome}/bin"]) {
-            sh "sonar-scanner"
+        def scannerHome = script.tool 'serversonarqube'
+        script.withEnv(["PATH+SONARSCANNER=${scannerHome}/bin"]) {
+            script.sh "sonar-scanner"
         }
     }
 }
