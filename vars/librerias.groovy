@@ -11,7 +11,7 @@ def call(Map params) {
                 steps {
                     script {
                         def buildnpm = new buildimagen()
-                        buildnpm.buildimagen(params.dockerUsername, params.dockerPassword)
+                        buildnpm.buildimagen()
                     }
                 }
             }
@@ -27,7 +27,7 @@ def call(Map params) {
                 steps {
                     script {
                         def buildimag = new imagen()
-                        buildimag.buildimagen(params.dockerUsername, params.dockerPassword)
+                        buildimag.buildimagen()
                     }  
                 }
             }
