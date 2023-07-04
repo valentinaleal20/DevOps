@@ -1,6 +1,9 @@
 package com.devops
 
-def buildimagen(String dockerUsername, String dockerPassword) {
+def call(Map params) {
+    def dockerUsername = params.dockerUsername
+    def dockerPassword = params.dockerPassword
+    
     sh "docker build -t fase2 ."
     sh "docker login -u ${dockerUsername} -p ${dockerPassword}"
     sh 'docker run mi-docker-image npm test'
