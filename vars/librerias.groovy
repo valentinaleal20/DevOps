@@ -34,6 +34,10 @@ def call(Map params){
                         }  
                     }
                 }
+            stage('DevOps Workflow') {
+                MyDevOpsLibrary pushimag = new MyDevOpsLibrary()
+                pushimag()
+            }
          }
     }
 }
