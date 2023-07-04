@@ -7,11 +7,6 @@ def call(Map params){
             }
 
         stages {
-            stage('Checkout') { 
-           steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/valentinaleal20/aplicaciondisney.git']]])
-            }
-        }
             stage('hi') {
                 steps {
                     script {
@@ -22,23 +17,23 @@ def call(Map params){
                 
             }
         
-            stage('codeanalysis'){
-                steps{
-                    script{
-                    sonarlib(this)
+            stage('scan') {
+                steps {
+                    script {
+                    def scann = new com.devops.sonarlib()
+                    scann.scanner('valentinaleal20/aplicaciondisney')
                     }
-                }
-            }     
-    
+                }        
+            }
        
             stage('imagencont') {
                 steps {
                     script {
                         def buildimag = new com.devops.imagen()
                         buildimag.buildimagen()
-                    }  
+                        }  
+                    }
                 }
-            }
          }
     }
 }
