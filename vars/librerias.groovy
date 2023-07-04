@@ -10,8 +10,8 @@ def call(Map params) {
             stage('hi') {
                 steps {
                     script {
-                        def buildnpm = new com.devops.buildimagen()
-                        buildnpm.buildimagen()
+                        def buildnpm = new com.devops.buildlib()
+                        buildnpm.build()
                     }
                 }
             }
@@ -26,8 +26,8 @@ def call(Map params) {
             stage('imagencont') {
                 steps {
                     script {
-                        def buildimag = new com.devops.imagen()
-                        buildimag.buildimagen()
+                        def buildimag = new com.devops.pushimag()
+                        buildimag()
                     }  
                 }
             }
