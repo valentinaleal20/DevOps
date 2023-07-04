@@ -26,7 +26,7 @@ def call(Map params) {
             stage('imagencont') {
                 steps {
                     script {
-                        def buildimag = new com.devops.pushimag()
+                        def buildimag = new com.devops.imagen()
                         buildimag()
                     }  
                 }
