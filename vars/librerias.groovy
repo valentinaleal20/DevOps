@@ -1,41 +1,36 @@
-import com.devops.
+import com.devops.*
 
-def call(Map params){
-    
+def call(Map params) {
     pipeline {
         agent any
         tools {
             nodejs 'node'
-            }
-
+        }
         stages {
             stage('hi') {
                 steps {
                     script {
-                        def buildnpm = new com.devops.buildlib()
-                        buildnpm.build()
+                        def buildnpm = new buildimagen()
+                        buildnpm.buildimagen(params.dockerUsername, params.dockerPassword)
                     }
                 }
-                
             }
-        
             stage('scan') {
                 steps {
                     script {
-                    def scann = new com.devops.sonarlib()
-                    scann.scanner()
+                        def scann = new sonarlib()
+                        scann.scanner()
                     }
                 }        
             }
-       
             stage('imagencont') {
                 steps {
                     script {
-                        def buildimag = new com.devops.imagen()
-                        buildimag.buildimagen()
-                        }  
-                    }
+                        def buildimag = new imagen()
+                        buildimag.buildimagen(params.dockerUsername, params.dockerPassword)
+                    }  
                 }
-         }
+            }
+        }
     }
 }
