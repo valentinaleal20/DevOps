@@ -21,7 +21,7 @@ def call(Map params){
                 steps {
                     script {
                     def scann = new com.devops.sonarlib()
-                    scann.scanner('valentinaleal20/aplicaciondisney')
+                    scann.scanner('https://github.com/valentinaleal20/aplicaciondisney.git')
                     }
                 }        
             }
