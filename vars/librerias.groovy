@@ -20,9 +20,9 @@ def call(Map params){
             stage('scan') {
                 steps {
                     script {
-                        def scann = new com.devops.sonarlib()
-                        scann.scanner()
-                    }  
+                    def scann = new com.devops.sonarlib()
+                    scann.scanner('valentinaleal20/aplicaciondisney')
+                    }
                 }        
             }
        
@@ -31,9 +31,9 @@ def call(Map params){
                     script {
                         def buildimag = new com.devops.imagen()
                         buildimag.buildimagen()
-            }  
-        }
-    }
-}
+                    }  
+                }
+            }
+         }
     }
 }
