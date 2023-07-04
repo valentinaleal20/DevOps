@@ -7,6 +7,11 @@ def call(Map params){
             }
 
         stages {
+            stage('Checkout') { 
+           steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/valentinaleal20/aplicaciondisney.git']]])
+            }
+        }
             stage('hi') {
                 steps {
                     script {

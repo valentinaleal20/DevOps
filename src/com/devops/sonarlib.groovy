@@ -1,12 +1,11 @@
 package com.devops
 
-def call(script){
-    script.withSonarQubeEnv('serversonarqube'){
-        bat "mvn clean verify sonar:sonar"
-        }
-    script.withSonarQubeEnv('serversonarqube'){
-        timeout(time: 3, unit: 'MINUTES'){
-        waitForQualityGate abortPipeline: true 
+def call(script) {
+    def sonarScannerHome = tool name: 'serversonarqube', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+    script.withSonarQubeEnv('serversonarqube') {
+    def scannerHome = tool 'serversonarqube'
+        withEnv(["PATH+SONARSCANNER=${scannerHome}/bin"]) {
+            sh "sonar-scanner"
         }
     }
 }
