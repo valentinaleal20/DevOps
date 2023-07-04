@@ -1,5 +1,3 @@
-import com.devops.
-
 def call(Map params) {
     pipeline {
         agent any
